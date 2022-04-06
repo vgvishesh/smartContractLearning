@@ -2,7 +2,7 @@
 async function main() {
     // Retrieve accounts from the local node
     const accounts = await ethers.provider.listAccounts();
-    console.log(accounts);
+    //console.log(accounts);
 
     // Set up an ethers contract, representing our deployed Box instance
     const address = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
@@ -10,13 +10,13 @@ async function main() {
     const box = await Box.attach(address);
 
     // Call the retrieve() function of the deployed Box contract
-    const value = await box.retrieve();
-    console.log('Box value is', value.toString());
+    //const value = await box.retrieve();
+    //console.log('Box value is', value.toString());
 
     // Send a transaction to store() a new value in the Box
-    await box.store(23);
+    await box.store(25);
 
-    //value = await box.retrieve();
+    const value = await box.retrieve();
     console.log('Box value is', value.toString());
 }
 
